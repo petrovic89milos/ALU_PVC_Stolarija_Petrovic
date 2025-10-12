@@ -1,0 +1,77 @@
+@use '../apstraktno/varijable' as var;
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4em 2em;
+  background-color: var.$navboja;
+  text-align: center;
+  color: var.$bela;
+  max-width: 1200px; // širina sekcije - ne ide do ivica ekrana
+  margin: 0 auto; // centrira sekciju u sredinu
+
+  border-radius: 2rem; // blago zaobljenje ivica (opciono za lepši izgled)
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); // suptilna senka
+
+  .stat {
+    flex: 1 1 200px;
+    margin: 1.5em 0;
+    color: var.$plava;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    i {
+      font-size: 3rem;
+      color: var.$zlatna; // ikonice zlatne
+      margin-bottom: 0.6em;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+
+      i {
+        transform: scale(1.15);
+      }
+    }
+
+    h3 {
+      font-size: 3rem;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+      color: var.$bela;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var.$bela; // tekst kao "Projekti", "Klijenti" itd. bela
+      margin: 0;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2em;
+
+    .stat {
+      h3 {
+        font-size: 2.4rem;
+      }
+
+      i {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

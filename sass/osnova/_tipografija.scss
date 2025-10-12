@@ -1,0 +1,18 @@
+@use '../apstraktno/varijable' as var;
+
+body {
+  font-family: var.$font-glavni;
+  font-size: 16px;
+  color: var.$crna;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

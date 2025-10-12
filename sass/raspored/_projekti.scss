@@ -1,0 +1,265 @@
+.projekti-hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  .projekti-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .projekti-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+
+  .projekti-hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.4em;
+    }
+    p {
+      font-size: 1.3rem;
+      color: #f5f5f5;
+    }
+  }
+}
+
+.projekti-galerija {
+  padding: 4em 2em;
+  background-color: #f8f8f8;
+
+  .projekti-filter {
+    text-align: center;
+    margin-bottom: 2em;
+
+    .filter-btn {
+      background-color: transparent;
+      border: 2px solid #2C3E50;
+      color: #2C3E50;
+      padding: 0.6em 1.4em;
+      border-radius: 30px;
+      margin: 0 0.5em;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active, &:hover {
+        background-color: #2C3E50;
+        color: #fff;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 2.3rem;
+    color: #2C3E50;
+    margin-bottom: 1.5em;
+    text-align: center;
+  }
+
+  .projekti-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .projekat-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .projekat-info {
+      padding: 1.5em;
+
+      h3 {
+        font-size: 1.4rem;
+        color: #2C3E50;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.projekti-poziv {
+  background-color: #2C3E50;
+  color: #fff;
+  text-align: center;
+  padding: 4em 2em;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8em;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5em;
+  }
+
+  .projekti-btn {
+    display: inline-block;
+    background-color: #f0b400;
+    color: #fff;
+    padding: 0.9em 2em;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color:(#f0b400, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+/* Mobile view filter dugmad */
+@media (max-width: 768px) {
+  .projekti-filter {
+    display: flex;
+    flex-direction: column;  // Vertikalno raspoređivanje
+    align-items: center;
+    gap: 0.6em;             // Razmak između dugmadi
+    margin-bottom: 1.5em;
+
+    .filter-btn {
+      width: 80%;            // Dugmad iste širine, lepo centrirana
+      text-align: center;
+      margin: 0;             // Ukidamo horizontalne margine
+    }
+  }
+}
+
+/* ================= MATERIJALI SEKCIJA ================= */
+.materijali {
+  padding: 4em 2em;
+  background-color: #f5f5f5;
+
+  .materijali-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .materijali-slika {
+    flex: 1 1 400px;
+    img {
+      width: 100%;
+      border-radius: 12px;
+      border: 4px solid #f0b400;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      &:hover {
+        transform: scale(1.05) rotate(1deg);
+      }
+    }
+  }
+
+  .materijali-tekst {
+    flex: 1 1 500px;
+
+    h2 {
+      font-size: 2.2rem;
+      color: #2C3E50;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+
+    .materijali-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+
+      .materijal-card {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 2em 1.5em;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .materijal-icon {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 1em;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+
+        h3 {
+          color: #f0b400;
+          margin-bottom: 0.8em;
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .materijali-wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: 2em;
+    }
+  }
+}

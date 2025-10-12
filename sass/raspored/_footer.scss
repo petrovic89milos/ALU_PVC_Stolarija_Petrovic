@@ -1,0 +1,95 @@
+@use '../apstraktno/varijable' as var;
+
+footer {
+  background-color: var.$navboja;
+  color: var.$bela;
+  padding: 4em 1.5em 2em;
+  font-size: 0.95rem;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5em;
+    text-align: left;
+  }
+
+  .footer-column {
+    h3, h4 {
+      color: var.$zlatna;
+      margin-bottom: 1em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: var.$bela;
+      opacity: 0.9;
+      margin-bottom: 0.6em;
+
+      a {
+        color: var.$bela;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var.$zlatna;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.6em;
+
+        a {
+          color: var.$bela;
+          text-decoration: none;
+          opacity: 0.85;
+          transition: color 0.3s ease, opacity 0.3s ease;
+
+          &:hover {
+            color: var.$zlatna;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .social-links {
+      margin-top: 1em;
+      display: flex;
+      gap: 1em;
+
+      a {
+        color: var.$bela;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var.$zlatna;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding-top: 1.5em;
+    margin-top: 2.5em;
+
+    p {
+      color: var.$bela;
+      opacity: 0.75;
+      font-size: 0.85rem;
+    }
+  }
+}

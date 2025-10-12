@@ -1,0 +1,120 @@
+@use '../apstraktno/varijable' as var;
+
+.newsletter {
+    background-color: #f5f5f5;
+    color: var.$bela;
+    padding: 4em 2em;
+    text-align: center;
+    margin-top: 3em;
+
+    .newsletter-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .newsletter-text {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.3em;
+            color: var.$navboja;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var.$navboja;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+
+    .newsletter-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8em;
+        flex-wrap: wrap;
+        width: 100%;
+
+        input[type="email"] {
+            padding: 0.9em 1.2em;
+            border-radius: 30px;
+            border: none;
+            width: 60%;
+            max-width: 400px;
+            font-size: 1rem;
+            outline: none;
+            color: #222;
+            background-color: #fff;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+            &:focus {
+                box-shadow: 0 0 8px var.$zlatna;
+                transform: scale(1.02);
+            }
+        }
+
+        button {
+            background-color: var.$zlatna;
+            color: #111;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            padding: 0.9em 2em;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 3em 1.5em;
+
+        .newsletter-text h2 {
+            font-size: 1.6rem;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+            gap: 1em;
+
+            input[type="email"] {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+      .newsletter-gif {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    border-color:var.$navboja;
+    object-fit: cover;
+    box-shadow: var.$navboja;
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

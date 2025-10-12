@@ -1,0 +1,98 @@
+@use '../apstraktno/varijable' as var;
+
+.onama {
+  background-color: #f5f5f5;
+  padding: 6em 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onama-wrapper {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.onama-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.onama-tekst {
+  flex: 1;
+  padding: 3em;
+}
+
+.onama-tekst h2 {
+  font-size: 2.4rem;
+  color: #2f337a;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.onama-tekst p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var.$bela;
+  margin-bottom: 1.5em;
+}
+
+.onama-tekst{
+  display: inline-block;
+  background-color: var.$navboja;
+  color: #ffffff;
+  padding: 0.85em 2em;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.onama-slika {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onama-slika img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 500px;
+  border-left: 4px solid #f0b400;
+}
+
+/* 📱 Responsivnost */
+@media (max-width: 900px) {
+  .onama-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .onama-slika img {
+    max-width: 80%;
+    border-left: none;
+    border-top: 4px solid #f0b400;
+  }
+
+  .onama-tekst {
+    padding: 2em 1.5em;
+  }
+
+  .onama-tekst h2 {
+    font-size: 2rem;
+  }
+
+  .onama-tekst p {
+    font-size: 1rem;
+  }
+}

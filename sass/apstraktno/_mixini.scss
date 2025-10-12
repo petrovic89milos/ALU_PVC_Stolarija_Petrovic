@@ -1,0 +1,17 @@
+// Flex centriranje
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $mobile) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+}

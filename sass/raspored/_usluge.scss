@@ -1,0 +1,271 @@
+@use '../apstraktno/varijable' as var;
+
+// ===== HERO SEKCIJA =====
+.usluge-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+  padding: 2em;
+  overflow: hidden;
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(65%) contrast(105%);
+    }
+
+    // dodaj lagani tamni prelaz od dole ka gore
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6) 10%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.2) 70%,
+        transparent 100%
+      );
+    }
+  }
+
+  &-text {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: var.$bela;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1.2s ease;
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.35rem;
+      margin-bottom: 1.5em;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+  }
+}
+
+// Animacija pojavljivanja teksta
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ===== GLAVNA SEKCIJA USLUGA =====
+.usluge-glavno {
+  padding: 4em 2em;
+
+  h2 {
+    font-size: 2.2rem;
+    color: var.$plava;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  .usluge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+  }
+
+  .usluga-card {
+    background-color: var.$navboja;
+    color: var.$bela;
+    padding: 2em 1.5em;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    i {
+      color: var.$zlatna;
+      margin-bottom: 0.6em;
+      transition: transform 0.3s ease;
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// ===== SEKCIJA KAKO FUNKCIONIŠEMO =====
+.usluge-process {
+  padding: 4em 2em;
+  background-color: var.$siva;
+
+  h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var.$plava;
+    margin-bottom: 1em;
+  }
+
+  p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3em auto;
+    font-size: 1.1rem;
+    color: var.$crna;
+    line-height: 1.6;
+  }
+
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: var.$plava;
+      border-radius: 2px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5em;
+      position: relative;
+
+      .step-number {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var.$plava;
+        color: var.$bela;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-text {
+        background-color: var.$bela;
+        padding: 1.5em;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        flex-grow: 1;
+
+        h3 {
+          font-size: 1.3rem;
+          margin-bottom: 0.5em;
+          color: var.$plava;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: var.$crna;
+        }
+      }
+
+      &:nth-child(5) .step-text {
+        border: 2px solid var.$zlatna;
+        box-shadow: 0 8px 20px rgba(240, 180, 0, 0.3);
+        h3 {
+          color: var.$zlatna;
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    display: inline-block;
+    margin: 3em auto 0 auto;
+    padding: 0.8em 2em;
+    background-color: var.$plava;
+    color: var.$bela;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: var.$zlatna;
+      color: var.$navboja;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// ===== RESPONSIVNOST =====
+@media (max-width: 768px) {
+  .usluge-hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .usluge-hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .usluge-glavno .usluge-grid {
+    gap: 1em;
+  }
+
+  .usluge-process .process-timeline {
+    &::before {
+      left: 20px;
+    }
+
+    .step {
+      flex-direction: column;
+      gap: 0.5em;
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .usluge-process .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
